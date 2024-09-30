@@ -16,12 +16,13 @@ public class ShiftArray {
 		for(int i = 0; i < arr.length; i++){
 			int index = (i+shift) % arr.length;
 			newArray[index] = arr[i];
+
+		}for(int i = 0; i < arr.length; i++){
+			arr[i] = newArray[i];
 		}
+		
 
-		arr = newArray;
 	}
-
-
 	public static void main(String[] args) {
 		try{
 			int[] a = {3, 4, 5, 6};
@@ -29,10 +30,9 @@ public class ShiftArray {
 			if(shiftAmount < 0){
 				System.out.println("Sorry, shift about must be positive.");
 				return;
-			}
-			shiftBy(a, shiftAmount);
-			for(int i : a){
-				System.out.print(i + " ");
+			}else shiftBy(a, shiftAmount);
+				for(int i : a){
+					System.out.print(i + " ");
 			}
 		}catch(Exception e){
 			System.out.println("Please rerun the program with proper command line arguments: " + e.getMessage());
